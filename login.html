@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title> 原生js代码</title>
+    <link rel="stylesheet" href="css/style.css">
+65
+</head>
+<body>
+<div class="adver">
+	<div id="book">书名：岛上书店</div>
+	<input type="text" name="season" id="aa" value="春" />
+	<input type="text" name="season" id="aa" value="夏" />
+	<input type="text" name="season" id="aa" value="秋" />
+	<input type="text" name="season" id="aa" value="冬" />
+	<input type="button" name="" id="" value="按钮" onclick="chen()" />
+	<div id="book1"></div>
+	<div id="total">
+	<input type="text" name="" id="price" value="1" />
+	<input type="button" name="" id="" value="加" onclick="jia()" />
+	<input type="button" name="" id="" value="减" onclick="jian()" />
+	<input type="button" name="" id="" value="删除" onclick="del()" />
+	<input type="button" name="" id="" value="添加" onclick="app()" />
+	<div id="tian"></div>
+	</div>
+	
+</div>
+</body>
+<script type="text/javascript">
+	function book(){
+		document.getElementById("book").innerHTML="现象级全球畅销书";
+	}
+	setInterval("disptime()",1000);
+	function disptime(){
+		var today = new Date(); //创建当前时间
+		var hh=today.getHours();	//当前小时
+		var mm=today.getMinutes();	//当前分钟
+		var ss=today.getSeconds();	//当前秒
+		document.getElementById("book1").innerHTML="时间是："+hh+":"+mm+":"+ss;
+	}
+	/*function chen(){
+		//setTimeout("location='index.html'",5000);
+		//location="index.html";
+		var aa=document.getElementsByName("season");
+		var today = new Date();
+		var hh=today.getHours();
+		var mm=today.getMinutes();
+		var ss=today.getSeconds();
+		document.getElementById("book1").innerHTML="现在是："+aa[0].value+"天,时间是："+hh+":"+mm+":"+ss;
+	}*/
+	//修改
+	function jia(){
+		var price=document.getElementById("price");
+		var abc=price.value++;
+		document.getElementById("price").innerHTML=abc;
+	}//修改
+		function jian(){
+		var price=parseInt(document.getElementById("price").value);
+		if(price>1){
+			price--;
+			document.getElementById("price").value=price;
+		}else {
+			alert("不能再减了");
+		}
+	}	//删除
+		function del(){
+			document.getElementById("total").remove();
+		}
+		//添加
+		function app(){
+			var tian=document.getElementById("tian");
+			var p=document.createElement("p"); //创建p标签
+			p.innerHTML="你好啊！";		//显示值
+			tian.appendChild(p)
+		}
+</script>
+</html>

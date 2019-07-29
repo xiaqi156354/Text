@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<script src="js/jquery-1.12.4.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery1.10.2.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/aaa.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<p>
+			<button name="" id="newsList">显示数据</button>
+		</p>
+		<div class="news_left"></div>
+		<div class="newstop">
+		</div>
+		<div id="flo">
+			<input type="button" name="" id="" value="按钮" onclick="chen1()" />
+		</div>
+		
+	</body>
+	<script type="text/javascript">
+		function chen(){
+			var flower= new Object();
+			flower.name="长春花";
+			flower.genera="长春花属";
+			flower.area="非洲、亚热带、热带，以及中国大陆";
+			flower.uses="观赏或用药";
+			flower.showName=function(){
+				alert(this.name);
+			}
+			flower.showName();
+		}
+		
+		function chen1(){
+			function Flower(name,genera,area,uses){
+				this.name=name;
+				this.genera=genera;
+				this.area=area;
+				this.uses=uses;
+				this.showName=showName;
+			}
+			function showName(){
+				alert(this.name);
+			}
+			var flower1=new Flower("长春花","长春花属","非洲、亚热带、热带，以及中国大陆","观赏或用药");
+			var flower2=new Flower("牡丹","芍药科  芍药属","中国大陆","观赏、食用或用药");
+			var flower3=new Flower("曼陀罗花","茄科  曼陀罗属","印度","观赏或用药");
+			flower1.showName();
+			flower2.showName();
+			flower3.showName();
+		}
+	</script>
+</html>
